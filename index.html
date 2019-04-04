@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marber Grid Book Cover Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="resetter.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <h1>Marber Grid Book Cover Generator</h1>
+
+        <form class="main-form">
+        <legend>Series</legend>
+        <section>
+            <fieldset class="radio-fieldset">
+                <div>
+                    <input type="radio" name="series" id="crimeSeries" value="#9EE485">
+                    <label for="crimeSeries">Crime</label>
+                </div>
+                <div>
+                    <input type="radio" name="series" id="educationSeries" value="#284D88">
+                    <label for="educationSeries">Pelican (Education)</label>
+                </div>
+                <div>
+                    <input type="radio" name="series" id="generalSeries" value="#FF7600">
+                    <label for="generalSeries">General</label>
+                </div>
+            </fieldset>
+        </section>
+        <section>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author">
+            </div>
+        </section>
+        <section>
+            <div>
+                <label for="width">Width (in pixels):</label>
+                <input type="number" name="width" id="width">
+            </div>
+        </section>
+        <section>
+            <label for="artworkSelect">Cover art</label>
+            <select id="artworkSelect">
+                <option value="lineDrawing1.png">Cat</option>
+                <option value="lineDrawing2.png">Chemical diagram</option>
+                <option value="lineDrawing3.png">Thumbprint</option>
+                <option value="lineDrawing4.png">Cigarette</option>
+                <option value="lineDrawing5.png">Orion</option>
+            </select>
+        </section>
+
+        <section>
+            <input type="submit" value="Clear form">
+            <input type="submit" value="Make my book cover!">
+        </section>
+        </form>
+
+        <!-- <section>
+            <div class="sample-book">
+                <section class="sample-upper-header"></section>
+                <section class="sample-main-header"></section>
+                <section class="sample-lower-header"></section>
+                <section class="sample-main-artwork"></section>
+            </div>
+        </section> -->
+
+        <section>
+            <div class="generated-book">
+                <section class="publisher-logo-container">
+                    <div class="publisher-logo"></div>
+                </section>
+                <section class="series-title">
+                    <h4>Penguin Crime</h4>
+                </section>
+                <section class="book-price">2'6</section>
+                <section class="book-title">
+                    <h2>The Incredulity of Julie Anne</h2>
+                </section>
+                <section class="author-name">
+                    <h3>J. A. Kohler</h3>
+                </section>
+                <section class="cover-art">
+                    <div class="backgrounded-image"></div>
+                </section>
+            </div>
+        </section>
+    </div>
+    <script src="generatorScript.js"></script>
+</body>
+</html>

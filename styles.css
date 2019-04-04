@@ -1,0 +1,90 @@
+:root {
+    --phi: 1.618033988749894848204586834;
+    --base-width: 500px;
+    --base-height: calc(var(--phi) * var(--base-width));
+    --background-color: #4baf27;
+}
+
+.app-wrapper {
+    font-family: Helvetica, Verdana, sans-serif;
+    padding: 20px;
+    background: linear-gradient(to bottom right, white, khaki);
+}
+
+/* .app-wrapper * {
+    border: solid red .5px;
+} */
+
+.generated-book {
+    width: var(--base-width);
+    margin-top: 30px;
+    padding: 5px;
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns:  [logo-col-start] calc(.1 * var(--base-width))
+                            [logo-col-end spacer-start] calc(.18  * var(--base-width))
+                            [spacer-end text-start] calc(.55 * var(--base-width))
+                            [price-start] calc(.17 * var(--base-width));
+    grid-template-rows: [publisher-info-start] calc(.1 * var(--base-height))
+                        [publisher-info-end title-start] calc(.12  * var(--base-height))
+                        [title-end author-start] calc(.06 * var(--base-height))
+                        [author-end artwork-start] calc(.73 * var(--base-height));
+    box-shadow: 10px 10px 15px grey;
+}
+
+.generated-book section {
+    border-bottom: 2px solid dimgray;
+}
+
+.publisher-logo-container {
+    grid-column: logo-col-start / span 2;
+    grid-row: publisher-info-start / publisher-info-end;
+}
+
+.publisher-logo-container .publisher-logo {
+    grid-column: logo-col-start / logo-col-end;
+    grid-row: publisher-info-start / publisher-info-end;
+
+    height: 100%;
+    background-image: url("img/penguin-logo.png");
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.series-title {
+    grid-column: text-start / price-start;
+    grid-row: publisher-info-start / publisher-info-end;
+}
+
+.book-price {
+    grid-column: price-start;
+    grid-row: publisher-info-start / publisher-info-end;
+}
+
+.book-title {
+    grid-column: text-start / span 2;
+    grid-row: title-start / title-end;
+}
+
+.author-name {
+    grid-column: text-start / span 2;
+    grid-row: author-start / author-end;
+}
+
+section.cover-art {
+    grid-column: logo-col-start / span 4;
+    grid-row: artwork-start;
+
+    padding: 20px;
+    border-bottom: none;
+}
+
+.cover-art div {
+    height: 100%;
+    width: 100%;
+    background-image: url("img/lineDrawing5.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
