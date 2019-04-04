@@ -1,25 +1,65 @@
 :root {
     --phi: 1.618033988749894848204586834;
-    --base-width: 500px;
+    --base-width: 400px;
     --base-height: calc(var(--phi) * var(--base-width));
-    --background-color: #4baf27;
+    --background-color: #80B84F;
+    --border-color: #0a0a0a;
+    --section-border: 2px solid black;
+    --border-width: calc(var(--base-width) * .001);
+}
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: none;
+}
+
+h2 {
+    font-size: calc(var(--base-width) * .07);
+}
+
+h3 {
+    font-size: calc(var(--base-width)  * .047);
+}
+
+h4, p {
+    font-size: calc(var(--base-width)  * .041);
+    font-weight: 100;
 }
 
 .app-wrapper {
-    font-family: Helvetica, Verdana, sans-serif;
+    min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(to bottom right, white, khaki);
+    font-family: Helvetica, Verdana, sans-serif;
+    background: linear-gradient(to top, white, white, var(--background-color));
 }
 
-/* .app-wrapper * {
-    border: solid red .5px;
-} */
+.book-details-form {
+    padding: 0 20px 20px 20px;
+    width: max-content;
+    border: solid 2px #b1b49e;
+}
+
+.book-details-form section {
+    margin-top: 20px;
+}
+
+.book-details-form section div {
+    margin-top: 5px;
+}
 
 .generated-book {
-    width: var(--base-width);
+    width: calc(var(--base-width) + 10px);
     margin-top: 30px;
     padding: 5px;
     background-color: var(--background-color);
+    box-shadow: 10px 10px 15px grey;
+    border-radius: 3px;
+
     display: grid;
     grid-template-columns:  [logo-col-start] calc(.1 * var(--base-width))
                             [logo-col-end spacer-start] calc(.18  * var(--base-width))
@@ -29,54 +69,82 @@
                         [publisher-info-end title-start] calc(.12  * var(--base-height))
                         [title-end author-start] calc(.06 * var(--base-height))
                         [author-end artwork-start] calc(.73 * var(--base-height));
-    box-shadow: 10px 10px 15px grey;
 }
 
 .generated-book section {
-    border-bottom: 2px solid dimgray;
+    border-bottom: var(--border-width) solid black;
+    overflow: hidden;
 }
 
 .publisher-logo-container {
-    grid-column: logo-col-start / span 2;
-    grid-row: publisher-info-start / publisher-info-end;
+    grid-column: logo-col-start;
+    grid-row: publisher-info-start;
+
+    padding: 5px;
 }
 
 .publisher-logo-container .publisher-logo {
-    grid-column: logo-col-start / logo-col-end;
-    grid-row: publisher-info-start / publisher-info-end;
-
     height: 100%;
+    width: 100%;
+
     background-image: url("img/penguin-logo.png");
-    background-position: left center;
+    background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .series-title {
     grid-column: text-start / price-start;
-    grid-row: publisher-info-start / publisher-info-end;
+    grid-row: publisher-info-start;
+
+    padding: calc(var(--base-width) * .051);
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .book-price {
     grid-column: price-start;
-    grid-row: publisher-info-start / publisher-info-end;
+    grid-row: publisher-info-start;
+
+    padding: calc(var(--base-width) * .051);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pre-title {
+    grid-column: logo-col-start / span 2;
+    grid-row: title-start;
 }
 
 .book-title {
     grid-column: text-start / span 2;
-    grid-row: title-start / title-end;
+    grid-row: title-start;
+
+    padding: calc(var(--base-width) * .019);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pre-author {
+    grid-column: logo-col-start / span 2;
+    grid-row: author-start;
 }
 
 .author-name {
     grid-column: text-start / span 2;
-    grid-row: author-start / author-end;
+    grid-row: author-start;
+
+    padding: calc(var(--base-width) * .0155);
+    padding-left: 0;
+    padding-right: 0;
+    color: ivory;
 }
 
 section.cover-art {
     grid-column: logo-col-start / span 4;
     grid-row: artwork-start;
 
-    padding: 20px;
+    padding: calc(var(--base-width) * .02);
     border-bottom: none;
 }
 
