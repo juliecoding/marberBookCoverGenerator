@@ -14,10 +14,6 @@
     box-sizing: border-box;
 }
 
-fieldset {
-    border: none;
-}
-
 h2 {
     font-size: calc(var(--base-width) * .07);
 }
@@ -31,30 +27,60 @@ h4, p {
     font-weight: 100;
 }
 
+.button {
+    padding: 6px;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
 .app-wrapper {
     min-height: 100vh;
     padding: 20px;
-    font-family: Helvetica, Verdana, sans-serif;
-    background: linear-gradient(to top, white, white, var(--background-color));
+    padding-left: 40px;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to top, white, var(--background-color));
+}
+
+.app-title {
+    margin-bottom: 50px;
+}
+
+.form-container, .book-container {
+    display: inline-block;
+    vertical-align: top;
 }
 
 .book-details-form {
-    padding: 0 20px 20px 20px;
     width: max-content;
-    border: solid 2px #b1b49e;
+    margin-right: 50px;
+    padding: 0 20px 20px 20px;
+    border: solid 1px ivory;
+    border-radius: 3px;
+    background-color: rgba(256, 256, 256, .5);
 }
 
 .book-details-form section {
     margin-top: 20px;
+    text-align: right;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
 }
 
 .book-details-form section div {
     margin-top: 5px;
 }
 
+.book-details-form .button-container {
+    margin-top: 40px;
+}
+
+.book-details-form .radio-fieldset {
+    border: none;
+    text-align: left;
+}
+
 .generated-book {
     width: calc(var(--base-width) + 10px);
-    margin-top: 30px;
     padding: 5px;
     background-color: var(--background-color);
     box-shadow: 10px 10px 15px grey;
@@ -97,7 +123,7 @@ h4, p {
     grid-column: text-start / price-start;
     grid-row: publisher-info-start;
 
-    padding: calc(var(--base-width) * .051);
+    padding: calc(var(--base-width) * .055);
     padding-left: 0;
     padding-right: 0;
 }
@@ -106,7 +132,7 @@ h4, p {
     grid-column: price-start;
     grid-row: publisher-info-start;
 
-    padding: calc(var(--base-width) * .051);
+    padding: calc(var(--base-width) * .055);
     padding-left: 0;
     padding-right: 0;
 }
@@ -134,7 +160,7 @@ h4, p {
     grid-column: text-start / span 2;
     grid-row: author-start;
 
-    padding: calc(var(--base-width) * .0155);
+    padding: calc(var(--base-width) * .02);
     padding-left: 0;
     padding-right: 0;
     color: ivory;
@@ -151,7 +177,7 @@ section.cover-art {
 .cover-art div {
     height: 100%;
     width: 100%;
-    background-image: url("img/lineDrawing5.png");
+    background-image: url("img/lineDrawing1.png");
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
