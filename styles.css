@@ -123,18 +123,16 @@ h4, p {
     grid-column: text-start / price-start;
     grid-row: publisher-info-start;
 
-    padding: calc(var(--base-width) * .055);
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: calc(var(--base-width) * .055);
+    padding-bottom: calc(var(--base-width) * .055);
 }
 
 .book-price {
     grid-column: price-start;
     grid-row: publisher-info-start;
 
-    padding: calc(var(--base-width) * .055);
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: calc(var(--base-width) * .055);
+    padding-bottom: calc(var(--base-width) * .055);
 }
 
 .pre-title {
@@ -146,9 +144,8 @@ h4, p {
     grid-column: text-start / span 2;
     grid-row: title-start;
 
-    padding: calc(var(--base-width) * .019);
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: calc(var(--base-width) * .019);
+    padding-bottom: calc(var(--base-width) * .019);
 }
 
 .pre-author {
@@ -160,9 +157,8 @@ h4, p {
     grid-column: text-start / span 2;
     grid-row: author-start;
 
-    padding: calc(var(--base-width) * .02);
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: calc(var(--base-width) * .02);
+    padding-bottom: calc(var(--base-width) * .02);
     color: ivory;
 }
 

@@ -22,8 +22,6 @@ function handleFormSubmit(e) {
         handyFormData[key] = value;
     }
 
-    console.log(handyFormData);
-
     // Update CSS vars
     if (handyFormData.width) root.style.setProperty('--base-width', handyFormData.width + 'px');
     if (handyFormData.series) root.style.setProperty('--background-color', handyFormData.series);
