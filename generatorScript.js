@@ -14,24 +14,45 @@ function handleFormSubmit(e) {
     const author = document.getElementById('authorNameHeader')
     const coverArt = document.getElementById('coverArtImage')
 
-    const formData = new FormData(bookDetailsForm);
-    const handyFormData = {};
+    // To construct a FormData object that contains the data from an existing <form>,
+    // specify that form element when creating the FormData object.
+    const formDataObj = new FormData(bookDetailsForm);
+    console.log("ENTRIES", formDataObj.entries());
+    const formData = {};
 
     // Use the iterator returned by .entries() to put all the form data in a friendly object
-    for (var [key, value] of formData.entries()) {
-        handyFormData[key] = value;
+    for (var [key, value] of formDataObj.entries()) {
+        formData[key] = value;
     }
 
     // Update CSS vars
-    if (handyFormData.width) root.style.setProperty('--base-width', handyFormData.width + 'px');
-    if (handyFormData.series) root.style.setProperty('--background-color', handyFormData.series);
+    //setproperty is sometimes used like so:
+    // <rulesSelector>.style.setProperty("background-color", "yellow");
+    if (formData.width) root.style.setProperty('--base-width', formData.width + 'px');
+    if (formData.series) root.style.setProperty('--background-color', formData.series);
 
     // Change background
-    if (handyFormData.artwork_select) coverArt.style.backgroundImage = `url(${handyFormData.artwork_select})`;
+    if (formData.artwork_select) coverArt.style.backgroundImage = `url(${formData.artwork_select})`;
 
     // Update HTML
-    if (handyFormData.title) title.innerHTML = handyFormData.title;
-    if (handyFormData.author) author.innerHTML = handyFormData.author;
+    if (formData.title) title.innerHTML = formData.title;
+    if (formData.author) author.innerHTML = formData.author;
 
     clearForm();
 }
+
+
+/* Methods of the FormData object
+    append()
+    delete()
+    entries()
+    get()
+    getAll()
+    has()
+    keys()
+    set()
+    values()
+*/
+
+// More style interaction
+// var setprop = document.styleSheets[0].cssRules[0]<selector>.style.setProperty("background-color", "yellow");

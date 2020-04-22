@@ -86,15 +86,20 @@ h4, p {
     background-color: var(--background-color);
     border-radius: 2px;
     box-shadow:
-        3px 3px 7px rgba(224, 224, 220, 0.8),
-        -2px 2px 0px var(--background-color),
-        -2px 5px 0px var(--background-color),
-        -2px 8px 5px var(--background-color),
-        10px 10px 5px var(--background-color),
-        25px 25px 20px grey;
+        /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]; */
+        5px 3px 2px rgba(224, 224, 220, 0.6),
+        -3px 0px 1px var(--background-color),
+        -3px 9px 1px var(--background-color),
+        6px 9px 2px var(--background-color),
+        9px 9px 1px var(--background-color),
+        11px 9px 1px var(--background-color),
+        20px 28px 25px grey;
     border-radius: 3px;
 
     display: grid;
+    /* grid-template-columns & -rows: Defines the columns and rows of the grid with a space-separated list of values.
+    The values represent the track size, and the space between them represents the grid line. */
+    /* You can choose to explicitly name the lines (you can even give them multiple names) */
     grid-template-columns:  [logo-col-start] calc(.1 * var(--base-width))
                             [logo-col-end spacer-start] calc(.18  * var(--base-width))
                             [spacer-end text-start] calc(.55 * var(--base-width))
@@ -111,6 +116,9 @@ h4, p {
 }
 
 .publisher-logo-container {
+    /* grid-column: <start-line> / <end-line> | <start-line> / span <value>;
+    grid-row: <start-line> / <end-line> | <start-line> / span <value>; */
+    /* No end-line = span 1 col or row */
     grid-column: logo-col-start;
     grid-row: publisher-info-start;
 
@@ -128,6 +136,7 @@ h4, p {
 }
 
 .series-title {
+    /* grid-column: <start-line> / <end-line> */
     grid-column: text-start / price-start;
     grid-row: publisher-info-start;
 
