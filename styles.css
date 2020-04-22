@@ -1,11 +1,13 @@
 :root {
     --phi: 1.618033988749894848204586834;
-    --base-width: 400px;
-    --base-height: calc(var(--phi) * var(--base-width));
     --background-color: #80B84F;
+    --background-gradient-target: rgb(240, 240, 218);
+    --base-height: calc(var(--phi) * var(--base-width));
+    --base-width: 400px;
     --border-color: #0a0a0a;
-    --section-border: 2px solid black;
     --border-width: calc(var(--base-width) * .001);
+    --section-border: 2px solid black;
+    --subtitle-color: ivory;
 }
 
 * {
@@ -38,7 +40,7 @@ h4, p {
     padding: 20px;
     padding-left: 40px;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to top, white, var(--background-color));
+    background: linear-gradient(to top left, white, var(--background-gradient-target));
 }
 
 .app-title {
@@ -54,7 +56,7 @@ h4, p {
     width: max-content;
     margin-right: 50px;
     padding: 0 20px 20px 20px;
-    border: solid 1px ivory;
+    border: solid 1px var(--subtitle-color);
     border-radius: 3px;
     background-color: rgba(256, 256, 256, .5);
 }
@@ -80,10 +82,16 @@ h4, p {
 }
 
 .generated-book {
-    width: calc(var(--base-width) + 10px);
-    padding: 5px;
+    width: calc(var(--base-width) + 2px);
     background-color: var(--background-color);
-    box-shadow: 10px 10px 15px grey;
+    border-radius: 2px;
+    box-shadow:
+        3px 3px 7px rgba(224, 224, 220, 0.8),
+        -2px 2px 0px var(--background-color),
+        -2px 5px 0px var(--background-color),
+        -2px 8px 5px var(--background-color),
+        10px 10px 5px var(--background-color),
+        25px 25px 20px grey;
     border-radius: 3px;
 
     display: grid;
@@ -159,7 +167,7 @@ h4, p {
 
     padding-top: calc(var(--base-width) * .02);
     padding-bottom: calc(var(--base-width) * .02);
-    color: ivory;
+    color: var(--subtitle-color);
 }
 
 section.cover-art {
